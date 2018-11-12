@@ -8,10 +8,11 @@
     doc.css(".content").each do |podcast_doc|
 
       title = podcast_doc.css(".clay-subheader").text.strip
+      url = podcast_doc.css("a").attr("href").value
 
-      Podcast.new(title)
+      Podcast.new(title, url)
         # summary = podcast.css(".clay-paragraph").text
-        # url = podcast.css("a href")
+
         # podcast_titles << title
         # podcast_summaries << summary
         # podcast_urls << url
