@@ -6,9 +6,9 @@ class CLI
     Scraper.scrape_podcast
 
     Podcast.all.each do |podcast|
-      puts "#{podcast.title}".chomp
+      puts "Title: #{podcast.title}".chomp
       puts "Find it here:#{podcast.url}".chomp
-      # puts "#{summary}".chomp
+      puts "What's it all about?: #{podcast.summary}".chomp
     end
 
   end

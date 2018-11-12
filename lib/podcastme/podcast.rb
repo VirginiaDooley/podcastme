@@ -1,11 +1,12 @@
 class Podcast
-  attr_accessor :title, :url
+  attr_accessor :title, :url, :summary
 
   @@all = []
 
-  def initialize(title, url)
+  def initialize(title, url, summary)
     @title = title
     @url = url
+    @summary = summary
     @@all << self
   end
 

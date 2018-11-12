@@ -9,13 +9,10 @@
 
       title = podcast_doc.css(".clay-subheader").text.strip
       url = podcast_doc.css("a").attr("href").value
+      summary = podcast_doc.css(".clay-paragraph").text
 
-      Podcast.new(title, url)
-        # summary = podcast.css(".clay-paragraph").text
+      Podcast.new(title, url, summary)
 
-        # podcast_titles << title
-        # podcast_summaries << summary
-        # podcast_urls << url
     end
   end
 end
