@@ -7,17 +7,15 @@
 
     doc.css(".content").each do |podcast_doc|
 
-      title = podcast_doc.css(".clay-subheader").text.strip
-
-      #producer = title.split("()")[1]
-
+      title = podcast_doc.css(".clay-subheader").text.strip.split(" (")[0]
+      producer = podcast_doc.css(".clay-subheader").text.strip.split("(" )[1]
       url = podcast_doc.css("a").attr("href").value
       summary = podcast_doc.css(".clay-paragraph").text
 
       Podcast.new(title, url, summary)
 
     end
-    
+
   end
 
 
