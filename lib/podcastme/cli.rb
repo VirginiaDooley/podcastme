@@ -15,7 +15,7 @@ class CLI
 
   def question
     puts "Choose the number (1-16) of the podcast would you like to learn more about:"
-    #user enters a podcast.title
+    
     input = gets.chomp
     #create a find object method
     podcast_object = Podcast.all[input.to_i - 1]
@@ -24,7 +24,7 @@ class CLI
     if podcast_object
       puts "What's it all about? #{podcast_object.summary}"
       puts "Find it here: #{podcast_object.url}".chomp
-      # loop
+      loop
     else
       puts "Invalid choice."
       question
@@ -32,14 +32,15 @@ class CLI
 
   end
 
-  # def loop
-  #   puts "Would you like to explore another podcast? Type 'Y' or 'N'"
-  #   input = gets.chomp
-  #   if input == "Y"
-  #     question
-  #   if input == "N"
-  #     puts "Thanks for exploring PodcastMe."
-  #   else
-  #     puts "Invalid choice. Type 'Y' or 'N'"
-  # end
+  def loop
+    puts "Would you like to explore another podcast? Type 'Y' or 'N'"
+      input = gets.chomp
+      if input == "Y"
+        question
+      elsif input == "N"
+        puts "Thanks for exploring PodcastMe."
+      else
+        puts "Invalid choice. Type 'Y' or 'N'"
+      end
+  end
 end
