@@ -8,6 +8,7 @@ class CLI
     Podcast.all.each.with_index(1) do |podcast, i|
       #separate title from producer with split and move produce into separate variable
       puts "#{i}. Title: #{podcast.title}".chomp
+      puts "Created by #{podcast.producer}".chomp
       #consider ruby truncate (research)
     end
     question
@@ -15,7 +16,7 @@ class CLI
 
   def question
     puts "Choose the number (1-16) of the podcast would you like to learn more about:"
-    
+
     input = gets.chomp
     #create a find object method
     podcast_object = Podcast.all[input.to_i - 1]

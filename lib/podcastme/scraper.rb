@@ -12,7 +12,7 @@
       url = podcast_doc.css("a").attr("href").value
       summary = podcast_doc.css(".clay-paragraph").text
 
-      Podcast.new(title, url, summary)
+      Podcast.new(title, producer, url, summary)
 
     end
 
