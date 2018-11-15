@@ -10,24 +10,29 @@ class CLI
       puts "Created by #{podcast.producer}".chomp
     end
     question
+    end
   end
 
   def question
     puts "Choose the number (1-16) of the podcast would you like to learn more about:"
 
     input = gets.chomp
-    #create a find object method
+
     podcast_object = Podcast.all[input.to_i - 1]
+
     #abstract all of this if stmt
     if podcast_object
-      puts "What's it all about? #{podcast_object.summary}"
+      #currently an input of a string is returning a result not an error message
+      puts "You chose #{podcast_object.title}"
+      puts "What's it all about?".chomp
+      puts "#{podcast_object.summary}".chomp
       puts "Find it here: #{podcast_object.url}".chomp
       loop
     else
       puts "Invalid choice."
       question
+      loop
     end
-
   end
 
   def loop
@@ -40,6 +45,5 @@ class CLI
       else
         puts "Invalid choice. Type 'Y' or 'N'"
         loop
-      end
   end
 end
