@@ -4,6 +4,7 @@ class Podcast
   @@all = []
 
   def self.find(index)
+    #find by index number and convert from string to integer. - 1 bc count starts at 0.
     @@all[index.to_i-1]
   end
 
@@ -13,10 +14,12 @@ class Podcast
     @producer = producer
     @url = url
     @summary = summary
+    #all instances of Podcast will be stored in a class variable
     @@all << self
   end
 
   def self.all
+    #all Podcasts will be called in the @@all class variable 
     @@all
   end
 
