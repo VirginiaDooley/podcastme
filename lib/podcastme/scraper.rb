@@ -13,11 +13,6 @@
       summary = podcast_doc.css(".clay-paragraph").text
 
       Podcast.new(title, producer, url, summary)
-
     end
-
   end
-
-
-
 end

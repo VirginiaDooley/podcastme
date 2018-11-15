@@ -6,10 +6,8 @@ class CLI
     puts "Welcome to PodcastMe: Discover your next podcast from the best of 2018"
 
     Podcast.all.each.with_index(1) do |podcast, i|
-      #separate title from producer with split and move produce into separate variable
       puts "#{i}. Title: #{podcast.title}".chomp
       puts "Created by #{podcast.producer}".chomp
-      #consider ruby truncate (research)
     end
     question
   end
@@ -20,7 +18,6 @@ class CLI
     input = gets.chomp
     #create a find object method
     podcast_object = Podcast.all[input.to_i - 1]
-    #if the user enters a valid podcast index, puts related podcast.url
     #abstract all of this if stmt
     if podcast_object
       puts "What's it all about? #{podcast_object.summary}"
@@ -42,6 +39,7 @@ class CLI
         puts "Thanks for exploring PodcastMe."
       else
         puts "Invalid choice. Type 'Y' or 'N'"
+        loop
       end
   end
 end
