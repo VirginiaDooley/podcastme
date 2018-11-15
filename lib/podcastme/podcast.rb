@@ -4,7 +4,7 @@ class Podcast
   @@all = []
 
   def initialize(title, producer, url, summary)
-
+    #setting properties
     @title = title
     @producer = producer
     @url = url

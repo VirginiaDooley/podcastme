@@ -9,11 +9,11 @@ class CLI
       puts "#{i}. Title: #{podcast.title}".chomp
       puts "Created by #{podcast.producer}".chomp
     end
-    question
+    select_podcast_by_index
     end
   end
 
-  def question
+  def select_podcast_by_index
     puts "Choose the number (1-16) of the podcast would you like to learn more about:"
 
     input = gets.chomp
@@ -30,7 +30,7 @@ class CLI
       loop
     else
       puts "Invalid choice."
-      question
+      select_podcast_by_index
       loop
     end
   end
@@ -39,7 +39,7 @@ class CLI
     puts "Would you like to explore another podcast? Type 'Y' or 'N'"
       input = gets.chomp
       if input == "Y"
-        question
+        select_podcast_by_index
       elsif input == "N"
         puts "Thanks for exploring PodcastMe."
       else
