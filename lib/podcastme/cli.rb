@@ -18,9 +18,8 @@ class CLI
 
     input = gets.chomp
 
-    podcast_object = Podcast.all[input.to_i - 1]
+    podcast_object = Podcast.find(@input)
 
-    #abstract all of this if stmt
     if podcast_object
       #currently an input of a string is returning a result not an error message
       puts "You chose #{podcast_object.title}"
