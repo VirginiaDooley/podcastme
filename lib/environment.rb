@@ -1,6 +1,7 @@
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 require_relative "./podcastme/cli"
 require_relative "./podcastme/scraper"

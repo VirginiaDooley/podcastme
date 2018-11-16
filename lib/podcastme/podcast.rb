@@ -19,7 +19,7 @@ class Podcast
   end
 
   def self.all
-    #all Podcasts will be called in the @@all class variable 
+    #all Podcasts will be called in the @@all class variable
     @@all
   end
 
