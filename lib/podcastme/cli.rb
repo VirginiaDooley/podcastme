@@ -21,7 +21,7 @@ class CLI
     podcast_object = Podcast.find(input)
 
     if input.to_i.between?(1, 16)
-      puts "You chose #{podcast_object.title}.green.bold"
+      puts "You chose #{podcast_object.title}".green.bold
       puts "What's it all about?".chomp
       puts "#{podcast_object.summary}".chomp
       puts "Find it here: #{podcast_object.url}".chomp
