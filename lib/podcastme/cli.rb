@@ -3,7 +3,7 @@ class CLI
   def run
 
     Scraper.scrape_podcast
-      puts "Welcome to PodcastMe: Discover your next podcast from the best of 2018"
+      puts "Welcome to PodcastMe: Discover your next podcast from the best of 2018".colorize(:white).on_blue
 
       Podcast.all.each.with_index(1) do |podcast, i|
         puts "#{i}. Title: #{podcast.title}".chomp
@@ -14,19 +14,20 @@ class CLI
   end
 
   def select_podcast_by_index
-    puts "Choose the number (1-16) of the podcast would you like to learn more about. Type 'exit' to quit."
+    puts "Choose the number (1-16) of the podcast would you like to learn more about. Type 'exit' to quit.".blue.bold
 
     input = gets.chomp
 
-    podcast_object = Podcast.find(@input)
+    podcast_object = Podcast.find(input)
 
     if input.to_i.between?(1, 16)
-      puts "You chose #{podcast_object.title}"
+      puts "You chose #{podcast_object.title}.green.bold"
       puts "What's it all about?".chomp
       puts "#{podcast_object.summary}".chomp
       puts "Find it here: #{podcast_object.url}".chomp
       loop
     elsif input == "exit"
+      puts "Happy Podcasting!".blue.bold
       exit!
     else
       puts "Invalid choice."
@@ -36,7 +37,7 @@ class CLI
   end
 
   def loop
-    puts "Would you like to explore another podcast? Type 'Y' or 'N'"
+    puts "Would you like to explore another podcast? Type 'Y' or 'N'".blue.bold
 
     input = gets.chomp
 
