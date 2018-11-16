@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Virginia Dooley"]
   spec.email         = ["vcdooley@gmail.com"]
 
-  spec.summary       = %q{Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
+  spec.summary       = %q{"A podcast finder"}
+  spec.description   = %q{A ruby gem to view podcasts by producer and summary}
   spec.homepage      = "https://github.com/VirginiaDooley/podcastme"
   spec.license       = "MIT"
 
@@ -39,4 +39,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_dependency "nokogiri", "~> 1.8"
+  spec.add_dependency "colorize", "~> 0.8.1"
 end
