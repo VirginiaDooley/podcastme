@@ -16,7 +16,7 @@ class CLI
   def select_podcast_by_index
     puts "Choose the number (1-16) of the podcast would you like to learn more about. Type 'exit' to quit.".blue.bold
 
-    input = gets.chomp
+    input = $stdin.gets.chomp
 
     podcast_object = Podcast.find(input)
 
@@ -39,7 +39,7 @@ class CLI
   def loop
     puts "Would you like to explore another podcast? Type 'Y' or 'N'".blue.bold
 
-    input = gets.chomp
+    input = $stdin.gets.chomp
 
     if input == "Y"
       select_podcast_by_index
