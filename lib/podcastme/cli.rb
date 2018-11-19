@@ -14,7 +14,7 @@ class CLI
   end
 
   def select_podcast_by_index
-    puts "Choose the number (1-16) of the podcast would you like to learn more about. Type 'exit' to quit.".blue.bold
+    puts "Choose the number (1-16) of the podcast would you like to learn more about. Type 'list' to see choices again. Type 'exit' to quit.".blue.bold
 
     input = $stdin.gets.chomp
 
@@ -25,28 +25,16 @@ class CLI
       puts "What's it all about?".chomp
       puts "#{podcast_object.summary}".chomp
       puts "Find it here: #{podcast_object.url}".chomp
-      loop
+      select_podcast_by_index
+    elsif input == 'list'
+      run
     elsif input == "exit"
       puts "Happy Podcasting!".blue.bold
       exit!
     else
       puts "Invalid choice."
       select_podcast_by_index
-      loop
-    end
+      # loop
   end
 
-  def loop
-    puts "Would you like to explore another podcast? Type 'Y' or 'N'".blue.bold
-
-    input = $stdin.gets.chomp
-
-    if input == "Y"
-      select_podcast_by_index
-    elsif input == "N"
-      puts "Thanks for exploring PodcastMe."
-    else
-      puts "Invalid choice. Type 'Y' or 'N'"
-      loop
-  end
 end
