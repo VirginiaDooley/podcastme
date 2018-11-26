@@ -18,6 +18,10 @@ Or install it yourself as:
 
     $ gem install podcastme
 
+## Run 
+
+enter 'ruby bin/cli' to start the gem
+
 ## Usage
 
 Choose from a short list of the best (so far) podcasts of 2018. Enter 1-16 to choose or exit to leave the program.
