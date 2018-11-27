@@ -4,4 +4,6 @@
 
 require_relative "../lib/environment"
 
-CLI.new.run
+# require 'podcastme'
+
+Podcastme::CLI.new.run
