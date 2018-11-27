@@ -5,10 +5,10 @@ module Podcastme
 
     def run
 
-      Scraper.scrape_podcast
+      @podcasts = Scraper.scrape_podcast
       puts "Welcome to PodcastMe: Discover your next podcast from the best of 2018".colorize(:white).on_blue
 
-      Podcast.all.each.with_index(1) do |podcast, i|
+      @podcasts.each.with_index(1) do |podcast, i|
         puts "#{i}. Title: #{podcast.title}".chomp
         puts "Created by #{podcast.producer}".chomp
       end
@@ -21,7 +21,7 @@ module Podcastme
 
       input = $stdin.gets.chomp
 
-      podcast_object = Podcast.find(input)
+      podcast_object = @podcasts[input.to_i]
 
       if input.to_i.between?(1, 16)
         puts "You chose #{podcast_object.title}".green.bold
@@ -40,5 +40,5 @@ module Podcastme
         select_podcast_by_index
       end
     end
-  end 
+  end
 end
