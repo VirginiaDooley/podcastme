@@ -18,9 +18,9 @@ Or install it yourself as:
 
     $ gem install podcastme
 
-## Run 
+## Run
 
-enter 'ruby bin/cli' to start the gem
+enter 'ruby bin/podcastme-cli'
 
 ## Usage
 
