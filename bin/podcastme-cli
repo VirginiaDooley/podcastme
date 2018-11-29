@@ -2,8 +2,6 @@
 
 #this is your executable file
 
-require 'podcastme'
+require_relative "../lib/environment"
 
-Podcastme::CLI.new.run
-
-# ruby -I lib bin/podcastme-cli
+CLI.new.run

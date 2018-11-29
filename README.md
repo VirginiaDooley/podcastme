@@ -12,15 +12,15 @@ gem 'podcastme'
 
 And then execute:
 
-    $ bundle
+$ bundle
 
 Or install it yourself as:
 
-    $ gem install podcastme
+$ gem install podcastme
 
 ## Run
 
-enter 'ruby bin/podcastme-cli'
+enter 'podcastme-cli'
 
 ## Usage
 

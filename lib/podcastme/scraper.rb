@@ -1,25 +1,18 @@
-require 'nokogiri'
-require 'open-uri'
+ class Scraper
 
-module Podcastme
-   class Scraper
+  def self.scrape_podcast
 
-    def self.scrape_podcast
-      podcasts = []
+    doc = Nokogiri::HTML(open('https://www.vulture.com/2018/10/best-podcasts-2018-so-far.html'))
 
-      doc = Nokogiri::HTML(open('https://www.vulture.com/2018/10/best-podcasts-2018-so-far.html'))
+    doc.css(".content").each do |podcast_doc|
+      title = podcast_doc.css(".clay-subheader").text.strip.split( " (" )[0]
+      producer = podcast_doc.css(".clay-subheader").text.strip.split(" (" )[1].chop
+      url = podcast_doc.css("a").attr("href").value
+      summary = podcast_doc.css(".clay-paragraph").text
 
-      doc.css(".content").each do |podcast_doc|
-        title = podcast_doc.css(".clay-subheader").text.strip.split( " (" )[0]
-        producer = podcast_doc.css(".clay-subheader").text.strip.split(" (" )[1].chop
-        url = podcast_doc.css("a").attr("href").value
-        summary = podcast_doc.css(".clay-paragraph").text
+      Podcast.new(title, producer, url, summary)
 
-        podcasts << Podcast.new(title, producer, url, summary)
-      end
-
-      podcasts
     end
-
   end
+
 end

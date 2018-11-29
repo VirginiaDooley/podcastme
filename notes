@@ -1,0 +1,25 @@
+notes for refactoring
+
+1. nest classes in module Podcastme to ensure individuality
+2. add Podcastme::CLI.new.run in executable
+3. move required gems out of environment and into the file(s) in which they are called
+4. rename environment file to podcastme so that it matches README instructions
+5. in a new list_podcasts instance method, consider a case statement with a loop (maybe until "exit" followed by ) in place to fix double counting in list method and avoid rerunning methods https://www.skorks.com/2009/08/how-a-ruby-case-statement-works-and-what-you-can-do-with-it/
+6. rather than @@all to collect all podcasts, have the scrape_podcast class method capture data in a class variable called @podcasts. be sure to create an empty array
+7. break down methods further based on behavior for example, describe #list_podcasts, even as far as separating out different inputs
+
+Z notes
+
+1: only access class variables directly within the reader method (6)
+2: refactor if stmt into a case stmt (5)
+3: write a blog that explains the scope of different kinds of variables (class, local, instance)
+4: update README run instructions
+5: timing? by next Wednesday
+
+6: slack message when done
+
+
+Hey you don't have to do the refactor in the CLI, just have the following completed by next Wednesday:
+1) Refactor your code in the Podcast class to only access the class variable, @@all, directly at creation point and within the reader method
+2)
+3) Correct GitHub README run instructions
